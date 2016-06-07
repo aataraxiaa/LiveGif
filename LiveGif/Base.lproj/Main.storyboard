@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="UWU-We-dSe">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--Live Photo Collection View Controller-->
+        <scene sceneID="1ua-JR-Zvo">
+            <objects>
+                <collectionViewController id="Esk-Ya-gtl" customClass="LivePhotoCollectionViewController" customModule="LiveGif" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="44w-yp-6Vs">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <collectionViewLayout key="collectionViewLayout" id="dKQ-vi-IUC" customClass="PhotosFlowLayout" customModule="LiveGif" customModuleProvider="target"/>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="thumbnailCell" id="RW9-1V-AF7" customClass="LivePhotoCell" customModule="LiveGif" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="64" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="e1u-KP-Z5L">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        </imageView>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                                <constraints>
+                                    <constraint firstItem="e1u-KP-Z5L" firstAttribute="centerX" secondItem="RW9-1V-AF7" secondAttribute="centerX" id="CVq-kz-MW1"/>
+                                    <constraint firstItem="e1u-KP-Z5L" firstAttribute="width" secondItem="RW9-1V-AF7" secondAttribute="width" id="GT9-Sl-g43"/>
+                                    <constraint firstItem="e1u-KP-Z5L" firstAttribute="height" secondItem="RW9-1V-AF7" secondAttribute="height" id="beV-OL-ADB"/>
+                                    <constraint firstItem="e1u-KP-Z5L" firstAttribute="centerY" secondItem="RW9-1V-AF7" secondAttribute="centerY" id="xsd-xw-5o4"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="thumbnail" destination="e1u-KP-Z5L" id="gpB-8c-NMJ"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="Esk-Ya-gtl" id="ySL-sZ-bR9"/>
+                            <outlet property="delegate" destination="Esk-Ya-gtl" id="Sto-mj-1rp"/>
+                        </connections>
+                    </collectionView>
+                    <navigationItem key="navigationItem" id="CMa-6t-qSb"/>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XLf-Fa-34x" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1227" y="466"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="q1U-yj-JsV">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="UWU-We-dSe" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="PdS-vd-heP">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Esk-Ya-gtl" kind="relationship" relationship="rootViewController" id="FdH-hJ-AH4"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sMg-Qc-Sxg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="415" y="466"/>
+        </scene>
+    </scenes>
+</document>
